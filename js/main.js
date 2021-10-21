@@ -17,35 +17,16 @@ let prezzo = 0.21
 
 if(età <= 18 ) {
     console.log(`sei minorenne`);
-    prezzo = prezzo * 20 / 100;
+    molt = prezzo * 20 / 100;
 }   
 
 
 if(età >= 65){
     console.log(`sei over 65`);
-    prezzo = prezzo * 40 / 100;
+    molt = prezzo * 40 / 100;
 }
 
-//ottieni prezzo totale biglietto
+//visualizza prezzo finale biglietto
 
-
-let molt = chilometri * prezzo;
-console.log(`calcolo totale :` ,  molt);
-
-//calcola prezzo per fascia d'età
-
-/*let totale; 
-
-(molt % 100 * 20);
-     totale = `young`; 
-
-if(molt % 100 * 40);
-     totale = `over`;    
-
-
-
-
-
-
-//mostra risultato*/
+document.getElementById (`risultato`).innerHTML = `Il totale è ${molt}`;
 
