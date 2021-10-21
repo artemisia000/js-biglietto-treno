@@ -33,11 +33,11 @@ if(età > 65){
     console.log('prezzo');
 }
 
-
 //visualizza prezzo finale biglietto
 
+molt = parseInt(molt.toFixed(3));
 
-document.getElementById(`risultato`).innerHTML = `Il totale è ${molt}` ;
+document.getElementById(`risultato`).innerHTML = `Il totale è ${molt}`;
 
 
 
