@@ -1,43 +1,31 @@
+/***
+ * BIGLIETTO DEL TRENO
+ */
 
 
-//chiedere all'utente il numero di chilometri
+const viaggio = parseInt(prompt('Quanti chilometri vuoi?'));
+console.log(viaggio);
 
-const chilometri = prompt(`Quanti chilometri vuoi percorrere?`);
-console.log(chilometri);
+const age = parseInt(prompt('Quanti anni hai?'));
+console.log(age);
+//viaggio per chilometro a 0.21
+const price = viaggio * 0.21;
+console.log(price);
+let message = `Il prezzo del biglietto è ${price.toFixed(2)}`;
 
-//chiedere l'età del passeggero
-
-const età = parseInt(prompt(`Quanti anni hai?`));
-console.log(età);
-console.log(typeof età);
-
-
-//definire prezzo in base ai chilometri
-
-const prezzo = 0.21
-
-let molt = prezzo * chilometri;
-console.log(`moltiplicazione:`, molt);
-
-if(età < 18 ) {
-    console.log(`sei minorenne`);
-    molt = molt-(molt * 20 / 100);
-    console.log(`prezzo`);
-
-}   
-
-
-if(età > 65){
-    console.log(`sei over 65`);
-    molt = molt-(molt * 40 / 100);
-    console.log('prezzo');
+//sconto minorenni 20%
+if( age < 18 ){
+    calc = price-(price / 100 * 20);
+    console.log(calc);
+    message = `Hai diritto allo sconto del 20%.Il totale è: ${calc.toFixed(2)}`;
 }
 
-//visualizza prezzo finale biglietto
+//sconto over 65 40%
+else if( age >= 65 ){
+    calc = price-(price / 100 * 40);
+    console.log(calc);
+    message = `Hai diritto allo sconto del 40%.Il totale è ${calc.toFixed(2)}`;
+}
 
-molt = parseInt(molt.toFixed(3));
 
-document.getElementById(`risultato`).innerHTML = `Il totale è ${molt}`;
-
-
-
+document.getElementById('ticket').innerHTML = message;
